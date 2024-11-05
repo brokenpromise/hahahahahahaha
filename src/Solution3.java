@@ -49,6 +49,7 @@ class Solution3 {
         int maxSize = 1;  // 最大子集的大小，最初是 1
         int maxValIndex = 0;  // 用来记录最大子集的末尾元素的索引
 
+        // 递推公式：dp[i] = max(dp[i], dp[j] + 1) if nums[i] % nums[j] == 0
         for (int i = 1; i < len; i++) {  // 从第二个元素开始遍历
             for (int j = 0; j < i; j++) {  // 比较每个元素 nums[i] 和之前的元素 nums[j]
                 if (nums[i] % nums[j] == 0) {  // 如果 nums[i] 能被 nums[j] 整除
